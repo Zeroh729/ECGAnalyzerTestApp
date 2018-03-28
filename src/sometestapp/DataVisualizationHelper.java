@@ -9,11 +9,11 @@ import org.jfree.ui.ApplicationFrame;
 import org.jfree.ui.RefineryUtilities;
 
 public class DataVisualizationHelper{    
-    public static void drawData(String chartTitle, String xLabel, String yLabel, int[][] data){
+    public static void drawData(String chartTitle, String xLabel, String yLabel, float[][] data){
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
         for(int i = 0; i < data.length; i++){
-            System.out.println("dataset adds: " + data[i][1] + " " + data[i][0]);
+//            System.out.println("dataset adds: " + data[i][1] + " " + data[i][0]);
             dataset.addValue(data[i][1], "", data[i][0] + "");
         }
         
