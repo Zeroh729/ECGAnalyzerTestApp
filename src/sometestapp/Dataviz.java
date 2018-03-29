@@ -8,8 +8,8 @@ import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.ui.ApplicationFrame;
 import org.jfree.ui.RefineryUtilities;
 
-public class DataVisualizationHelper{    
-    public static void drawData(String chartTitle, String xLabel, String yLabel, float[][] data){
+public class Dataviz{    
+    public static void drawData(String chartTitle, String xLabel, String yLabel, double[][] data){
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
         for(int i = 0; i < data.length; i++){
