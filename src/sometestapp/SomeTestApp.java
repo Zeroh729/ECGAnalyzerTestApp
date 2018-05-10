@@ -15,7 +15,7 @@ public class SomeTestApp {
         ECGAnalyzer.setData(filedata);
         data = ECGAnalyzer.getData();
         
-//        Dataviz.drawData("Original Data", "milliseconds", "volts", data);
+        Dataviz.drawData("Original Data", "milliseconds", "volts", data);
 //        data = DSPFunction.execute(Type.LOWPASSFILTER, data);
 //        Dataviz.drawData("Low Pass Filter", "milliseconds", "volts", data);
 //        data = DSPFunction.execute(Type.HIGHPASSFILTER, data);
@@ -26,6 +26,9 @@ public class SomeTestApp {
 //        Dataviz.drawData("Squaring", "milliseconds", "volts", data);
         data = DSPFunction.execute(Type.ALL, data);
         Dataviz.drawData("All", "milliseconds", "volts", data);
+        DSPFunction.detectRPeaks();
+        int bpm = DSPFunction.calculateBPM();
+        System.out.println("BPM is " + bpm);
     }
 
 }

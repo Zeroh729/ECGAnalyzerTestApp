@@ -12,7 +12,8 @@ package sometestapp;
 public class DummyData {
 
     public static String getData() {
-        return "13,293\n" +
+        return "" +
+            "13,293\n" +
             "25,273\n" +
             "38,257\n" +
             "50,251\n" +
