@@ -5,6 +5,8 @@ import ecganal.ECGAnalyzer;
 import ecganal.DSPFunction;
 import ecganal.DSPFunction.Type;
 import ecganal.Model.ECGSummary;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,6 +21,11 @@ public class SomeTestApp {
             @Override
             public void onSuccess(ECGSummary summary) {
                 System.out.println("BPM is " + summary.getBPM());
+                System.out.println("RR Intervals are " + summary.getRRIntervals());
+                HashMap<String, int[]> labels = new HashMap();
+                labels.put("R peaks", toIntArr(summary.getrIndices()));
+                
+//                Dataviz.drawData("Original", "ECG", "Time", summary.getOriginalData(), labels);
             }
             
             @Override
@@ -26,6 +33,14 @@ public class SomeTestApp {
                 System.out.println("Fail! " + message);
             }
         });
+    }
+    
+    private static int[] toIntArr(ArrayList<Integer> alist){
+        int[] arr = new int[alist.size()];
+        for(int i = 0; i < alist.size(); i ++){
+            arr[i] = alist.get(i) - 16;
+        }
+        return arr;
     }
 
 }
