@@ -22,6 +22,7 @@ public class SomeTestApp {
             public void onSuccess(ECGSummary summary) {
                 System.out.println("BPM is " + summary.getBPM());
                 System.out.println("RR Intervals are " + summary.getRRIntervals());
+                System.out.println("Deviating RRI count " + summary.getDeviatingRRIcount());
                 HashMap<String, int[]> labels = new HashMap();
                 labels.put("R peaks", toIntArr(summary.getrIndices()));
                 
